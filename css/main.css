@@ -42,7 +42,13 @@ img {
 }
 
 section {
-    padding: 5rem 0;
+    padding: 3rem 0;
+}
+
+@media (min-width: 992px) {
+    section {
+        padding: 5rem 0;
+    }
 }
 
 ::-webkit-scrollbar {
@@ -290,7 +296,7 @@ footer .copyright {
 }
 
 .hero .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #F5F3E7;
 }
@@ -302,7 +308,7 @@ footer .copyright {
 }
 
 .hero .hero-content p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 2rem;
     color: #F5F3E7;
     letter-spacing: 2px;
@@ -346,8 +352,10 @@ footer .copyright {
     background-color: #121416;
 }
 
-.feature-section:nth-child(even) .row {
-    flex-direction: row-reverse;
+@media (min-width: 992px) {
+    .feature-section:nth-child(even) .row {
+        flex-direction: row-reverse;
+    }
 }
 
 .feature-section .feature-img {
