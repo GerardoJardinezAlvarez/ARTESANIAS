@@ -1,0 +1,218 @@
+@import 'variables';
+
+.hero {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(10, 26, 31, 0.7);
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 0 1rem;
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: $color-text-main;
+
+            @media (min-width: $bp-md) {
+                font-size: 5rem;
+            }
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: $color-text-main;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    h2 {
+        font-size: 2.5rem;
+        color: $color-accent-primary;
+        margin-bottom: 1rem;
+        position: relative;
+        display: inline-block;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: $color-accent-tertiary;
+            margin: 10px auto 0;
+        }
+    }
+
+    p {
+        color: $color-text-secondary;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+.feature-section {
+    padding: 6rem 0;
+    border-bottom: 1px solid rgba($color-border, 0.3);
+
+    &:nth-child(even) {
+        background-color: $color-bg-secondary;
+
+        .row {
+            flex-direction: row-reverse;
+        }
+    }
+
+    .feature-img {
+        border-radius: 0;
+        box-shadow: 10px 10px 0 $color-accent-secondary;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+
+    .feature-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        padding: 2rem;
+
+        h3 {
+            font-size: 2rem;
+            color: $color-accent-primary;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: $color-text-secondary;
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+
+        img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba($color-bg-main, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+
+            h4 {
+                color: $color-accent-primary;
+                transform: translateY(20px);
+                transition: transform 0.3s ease;
+            }
+
+            p {
+                color: $color-text-main;
+                transform: translateY(20px);
+                transition: transform 0.3s ease 0.1s;
+            }
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.1);
+            }
+
+            .overlay {
+                opacity: 1;
+
+                h4,
+                p {
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+}
+
+.contact-wrapper {
+    background-color: $color-bg-secondary;
+    padding: 3rem;
+    border: 1px solid $color-border;
+
+    .form-control {
+        background-color: $color-bg-main;
+        border: 1px solid $color-border;
+        color: $color-text-main;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: 0;
+
+        &:focus {
+            background-color: lighten($color-bg-main, 5%);
+            border-color: $color-accent-primary;
+            box-shadow: none;
+            color: $color-text-main;
+        }
+    }
+
+    label {
+        color: $color-text-secondary;
+        margin-bottom: 0.5rem;
+    }
+}
+
+.map-container {
+    height: 100%;
+    min-height: 400px;
+    border: 1px solid $color-border;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+}

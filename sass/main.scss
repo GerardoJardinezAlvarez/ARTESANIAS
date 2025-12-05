@@ -1,0 +1,12 @@
+@import 'variables';
+@import 'base';
+@import 'components';
+@import 'layout';
+
+.text-gold {
+    color: $color-accent-primary !important;
+}
+
+.bg-dark-soft {
+    background-color: $color-bg-secondary !important;
+}
